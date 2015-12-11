@@ -24,6 +24,6 @@ RUN wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie
 RUN mkdir /opt/java-oracle && tar -zxf /tmp/$filename -C /opt/java-oracle/
 
 #additional config
-ENV JAVA_HOME /opt/java-oracle/jdk$java_version
+ENV JAVA_HOME /opt/java-oracle/jre$java_version
 ENV PATH $JAVA_HOME/bin:$PATH
 RUN update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 20000 
