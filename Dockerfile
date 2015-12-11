@@ -1,8 +1,8 @@
 #
 # Java 8 based image
 #
-# Dockerfile Version 1.0.3
-# Oracle Java version 1.8.0_51 64 bit
+# Dockerfile Version 1.0.5
+# Oracle Java Developer Kit (JDK) version 1.8.0_66 64 bit
 #
 
 FROM debian:jessie
@@ -14,11 +14,11 @@ RUN apt-get update && apt-get install -y wget && apt-get clean
 
 #Some variables
 
-ENV java_version 1.8.0_51
-ENV filename jdk-8u51-linux-x64.tar.gz
-ENV downloadlink http://download.oracle.com/otn-pub/java/jdk/8u51-b16/$filename -O /tmp/$filename
-
+ENV java_version 1.8.0_66
+ENV filename jdk-8u66-linux-x64.tar.gz
 #Download java
+ENV downloadlink http://download.oracle.com/otn-pub/java/jdk/8u66-b17/$filename -O /tmp/$filename
+
 RUN wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" $downloadlink -O /tmp/$filename
 
 RUN mkdir /opt/java-oracle && tar -zxf /tmp/$filename -C /opt/java-oracle/
